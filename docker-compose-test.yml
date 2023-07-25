@@ -1,0 +1,24 @@
+# version: "3.8"
+
+# services:
+#   app:
+#     image: registry.gitlab.com/tranvanchilong/async_web_gia:v0.1
+#     container_name: django_api_demo
+#     command: python manage.py runserver 0.0.0.0:8000
+#     ports:
+#       - "5002:8000"
+#     restart: always
+#     volumes:
+#       - ./app:/app
+
+version: '3'
+services:
+    app:
+        image: api_vue
+        container_name: django_api_demo2
+        # command: cd app
+        # command: npm run serve
+        ports: 
+            - "8080:8080"
+        volumes:
+            - ./app:/app

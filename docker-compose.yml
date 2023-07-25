@@ -1,0 +1,22 @@
+version: "3.8"
+
+services:
+  app:
+    image: registry.gitlab.com/tranvanchilong/async_web_gia:v0.1
+    container_name: starlette_crawl_code
+    command: python manage.py runserver 0.0.0.0:8000
+    restart: unless-stopped
+    volumes:
+      - ./app:/app
+    environment:
+       VIRTUAL_HOST: starlette_crawl_code.13net.xyz
+       VIRTUAL_PORT: 5002
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: "10m"
+networks:
+  default:
+    external:
+      name: b_nginx_network
