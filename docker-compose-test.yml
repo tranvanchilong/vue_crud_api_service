@@ -14,7 +14,7 @@
 version: '3'
 services:
     app:
-        image: api_vue
+        image: registry.gitlab.com/tranvanchilong/async_web_gia:v0.9
         container_name: django_api_demo2
         # command: cd app
         # command: npm run serve
